@@ -1,0 +1,5 @@
+services:
+    CleverAge\ProcessLauncherBundle\Manager\ProcessManager:
+        class: CleverAge\ProcessLauncherBundle\Manager\ProcessManager
+        public: false
+        autowire: true

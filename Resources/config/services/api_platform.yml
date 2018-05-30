@@ -1,0 +1,16 @@
+services:
+    CleverAge\ProcessLauncherBundle\DataProvider\ProcessConfigurationDataProvider:
+        class: CleverAge\ProcessLauncherBundle\DataProvider\ProcessConfigurationDataProvider
+        public: false
+        autowire: true
+        tags:
+            -  { name: api_platform.collection_data_provider, priority: 2 }
+            -  { name: api_platform.item_data_provider, priority: 2 }
+
+    CleverAge\ProcessLauncherBundle\DataProvider\ProcessInfoDataProvider:
+        class: CleverAge\ProcessLauncherBundle\DataProvider\ProcessInfoDataProvider
+        public: false
+        autowire: true
+        tags:
+            -  { name: api_platform.collection_data_provider, priority: 2 }
+            -  { name: api_platform.item_data_provider, priority: 2 }

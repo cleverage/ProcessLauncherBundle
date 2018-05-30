@@ -1,0 +1,40 @@
+resources:
+    CleverAge\ProcessLauncherBundle\Configuration\ProcessConfiguration:
+        properties:
+            code:
+                identifier: true
+        collectionOperations:
+            get:
+                method: 'GET'
+        itemOperations:
+            get:
+                method: 'GET'
+
+    CleverAge\ProcessLauncherBundle\Entity\ProcessExecution:
+        properties:
+#            uuid:
+#                identifier: true
+#                writable: false
+#            processConfiguration:
+#                required: true
+#                writable: true
+#            command:
+#                writable: false
+#            pid:
+#                writable: false
+#            startedAt:
+#                writable: false
+            finished:
+                readOnly: true # does not work
+                writable: false # does not work
+
+    CleverAge\ProcessLauncherBundle\Process\ProcessInfo:
+        properties:
+            pid:
+                identifier: true
+        collectionOperations:
+            get:
+                method: 'GET'
+        itemOperations:
+            get:
+                method: 'GET'

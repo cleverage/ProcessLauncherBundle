@@ -1,0 +1,7 @@
+services:
+    CleverAge\ProcessLauncherBundle\Serializer\Denormalizer\ProcessExecutionDenormalizer:
+        class: CleverAge\ProcessLauncherBundle\Serializer\Denormalizer\ProcessExecutionDenormalizer
+        public: false
+        autowire: true
+        tags:
+            - { name: serializer.normalizer, priority: 9 }

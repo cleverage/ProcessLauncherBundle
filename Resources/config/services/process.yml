@@ -1,0 +1,10 @@
+services:
+    CleverAge\ProcessLauncherBundle\Factory\ProcessInfoFactory:
+        class: CleverAge\ProcessLauncherBundle\Factory\ProcessInfoFactory
+        public: false
+        autowire: true
+
+    CleverAge\ProcessLauncherBundle\Utility\PsUtility:
+        class: CleverAge\ProcessLauncherBundle\Utility\PsUtility
+        public: false
+        autowire: true

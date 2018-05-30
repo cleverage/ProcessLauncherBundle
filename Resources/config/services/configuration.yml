@@ -1,0 +1,14 @@
+services:
+    cleverage.process_launcher.process.clear_cache:
+        class: CleverAge\ProcessLauncherBundle\Configuration\ProcessConfiguration
+        arguments:
+            - clear_cache
+            - 'bin/console --env={{env}} cache:clear'
+        calls:
+            -
+                - setDefaultOptions
+                -
+                    -
+                        env: '%kernel.environment%'
+        tags:
+            - { name: cleverage.process_configuration }

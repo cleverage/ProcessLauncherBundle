@@ -1,0 +1,5 @@
+services:
+    CleverAge\ProcessLauncherBundle\Registry\ProcessConfigurationRegistry:
+        class: CleverAge\ProcessLauncherBundle\Registry\ProcessConfigurationRegistry
+        tags:
+            - { name: doctrine.event_listener, event: clever_process_configuration_registry }
