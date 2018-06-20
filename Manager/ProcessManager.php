@@ -65,8 +65,15 @@ class ProcessManager
             null,
             $processConfiguration->getInput()
         );
+        $process->disableOutput();
         $process->start();
-        $processExecution = new ProcessExecution($processConfiguration, $process->getPid());
+
+        // Fetching real process PID:
+        $pid = exec('pgrep -P '.$process->getPid());
+        // https://github.com/symfony/symfony/issues/5759
+        // https://bugs.php.net/bug.php?id=39992
+
+        $processExecution = new ProcessExecution($processConfiguration, $pid);
         $this->saveProcessExecution($processExecution);
 
         return $processExecution;
