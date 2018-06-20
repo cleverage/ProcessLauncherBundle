@@ -100,12 +100,15 @@ class ProcessInfoDataProvider implements CollectionDataProviderInterface, ItemDa
      */
     public function getItem(string $resourceClass, $id, string $operationName = null, array $context = [])
     {
-        if (!is_a($resourceClass, ProcessConfigurationInterface::class, true)) {
+        if (!is_a($resourceClass, ProcessInfo::class, true)) {
             throw new ResourceClassNotSupportedException('Resource class is not a ProcessConfigurationInterface');
         }
         if ('get' === $operationName) {
             /** @var ProcessExecutionInterface $processExecution */
             $processExecution = $this->repository->find($id);
+            if (!$processExecution) {
+                return null;
+            }
 
             return $this->processManager->trackProcess($processExecution);
         }
